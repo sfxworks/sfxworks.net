@@ -1,65 +1,133 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/4.8.1/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/4.8.1/firebase-auth.js"></script>
-    <script defer src="/__/firebase/4.8.1/firebase-database.js"></script>
-    <script defer src="/__/firebase/4.8.1/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/4.8.1/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
+<head>
+	<title>sfxnet</title>
+    <meta charset="UTF-8">
+    <!-- Compatibility --> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
-
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/basicStyles.css">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-24240017-1"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-        try {
-          let app = firebase.app();
-          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
+      gtag('config', 'UA-24240017-1');
     </script>
-  </body>
-</html>
+
+</head>
+    
+<body>
+        
+    <nav class="navbar navbar-inverse navbar-toggleable-sm bg-inverse"> 
+        
+        <!-- Hamburger Button for Mobile -->
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#headerMenu"><br><span class="navbar-toggler-icon"></span></button>
+        
+        <!-- Logo and Text -->
+        <a href="#" class="navbar-brand">sfxnet</a>
+          
+        <!-- Actual Nav -->
+        <div class="collapse navbar-collapse" id="headerMenu">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#">Home</a>
+                <!-- <a class="nav-item nav-link disabled" href="#">News</a> -->
+                
+                
+                <div class="dropdown">
+                  <a class="nav-item nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                    Projects
+                  </a>
+
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="https://github.com/sfxworks/Public-Desktop">Public Desktop</a>
+                    <!-- <a class="dropdown-item disabled" href="#">Elemental Blocks</a> -->
+                    <a class="dropdown-item" href="https://github.com/sfxworks/Project-Storage">Filestore</a>
+                    <a class="dropdown-item" href="https://hotstourneys.com">HotS Tourneys</a>
+                  </div>
+                </div>
+                
+                <div class="dropdown">
+                  <a class="nav-item nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                    Works
+                  </a>
+
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="http://builtbroken.com">Built Broken Studios</a>
+                    <a class="dropdown-item" href="https://play.google.com/store/apps/details?id=air.quantumlogic.newsarch">News Arch</a>
+                  </div>
+                </div>
+                
+                <a class="nav-item nav-link" href="/technologies">Technologies</a>
+                <!-- <a class="nav-item nav-link disabled" href="#">Services</a> -->
+                <div class="dropdown">
+                  <a class="nav-item nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                    Contact
+                  </a>
+
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="tel:+16505573996">650-557-3996</a>
+                    <a class="dropdown-item" href="mailto:sfxworks@gmail.com">sfxworks@gmail.com</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="jumbotron jumbotron-fluid mt-4 bg-inverse text-white"> 
+        <div class="container"> 
+            <div class="display-4 mb-4">Cutting edge quality cross plaform applications.</div> 
+            <p class="lead">We encroach 2018. Using the latest technologies is essential for any individual or business to stand out in the modern web. Take advantage of the latest, yet stable and quick to implement releases of the net. All at a fair and affordable price.</p> 
+        </div> 
+    </header>
+        
+    <div class="container">
+        <div class="row mb-5">
+            <section class="col-sm-4">
+                <h2>Machine Learning</h2>
+                <p>The latest and greatest applications stay smart in the background. Know what engages and disengages your users to get the most out of your application.</p>
+            </section>
+
+            <section class="col-sm-4">
+                <h2>Cloud Computing</h2>
+                <p>Your website or mobile app's data hosted on the cloud. Don't worry about slow load times at the fault of the server. Google's Content Delivery Network will have your back at an affordable price.</p>
+            </section>
+
+            <section class="col-sm-4">
+                <h2>Analytics</h2>
+                <p>Curious as to what your users see, do and purchase when using your product? Track it all in Google Analytics.</p>
+            </section>
+
+            <section class="col-sm-4">
+                <h2>Social Engagement</h2>
+                <p>Part of getting your users to engage with you is for you to engage with them. Open yourself up to popular platforms like Facebook, Twitter and Instagram with automation and promotional handling.</p>
+            </section>
+
+            <section class="col-sm-4">
+                <h2>User Experience</h2>
+                <p>Your app may function, but does it drive the user to continue use? Appealing to your user through design is the best way to get results out of your product.</p>
+            </section>
+
+            <section class="col-sm-4">
+                <h2>Advertiser Friendly</h2>
+                <p>Wanting to promote your brick and mortar business? Trying to bring users to your services? Using selected smart advertising partners, promote your content and make every dollar count towards your goal.</p>
+            </section>
+        </div>
+    </div>
+        
+        
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+            
+</body>
