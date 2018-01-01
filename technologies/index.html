@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
 <head>
-	<title>sfxnet</title>
+	<title>Technologies</title>
     <meta charset="UTF-8">
     <!-- Compatibility --> 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,6 +22,33 @@
       gtag('js', new Date());
 
       gtag('config', 'UA-24240017-1');
+    </script>
+    
+    <!-- Global site tag (gtag.js) - Google AdWords: 960739251 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-960739251"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-960739251');
+    </script>
+    
+    <!-- Event snippet for Ad Action Conversion conversion page
+    In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-960739251/47I8CJyn73oQs--OygM',
+          'event_callback': callback
+      });
+      return false;
+    }
     </script>
 </head>
     
@@ -48,9 +75,9 @@
                   </a>
 
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="https://github.com/sfxworks/Public-Desktop">Public Desktop</a>
+                    <a class="dropdown-item" href="/publicdesktop">Public Desktop</a>
                     <!-- <a class="dropdown-item disabled" href="#">Elemental Blocks</a> -->
-                    <a class="dropdown-item" href="https://github.com/sfxworks/Project-Storage">Filestore</a>
+                    <a class="dropdown-item" href="/filestore">Filestore</a>
                     <a class="dropdown-item" href="https://hotstourneys.com">HotS Tourneys</a>
                   </div>
                 </div>
@@ -74,8 +101,8 @@
                   </a>
 
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="tel:+16505573996">650-557-3996</a>
-                    <a class="dropdown-item" href="mailto:sfxworks@gmail.com">sfxworks@gmail.com</a>
+                    <a class="dropdown-item" href="tel:+16505573996" onclick="gtag_report_conversion('#')">650-557-3996</a>
+                    <a class="dropdown-item" href="mailto:services@sfxworks.net">services@sfxworks.net</a>
                   </div>
                 </div>
             </div>
@@ -86,7 +113,7 @@
         <div class="container">
             <div class="row mb-3">
                 <section class="col-sm-6">
-                    <img class="mx-auto d-block mb-4" width="50%" src="../img/firebase-logotext.png">
+                    <a href="https://firebase.google.com/"><img class="mx-auto d-block mb-4" width="50%" src="../img/firebase-logotext.png"></a>
                 </section>
                 
                 <section class="col-sm-6">
@@ -108,7 +135,7 @@
                 </section>
                 
                 <section class="col-sm-6">
-                    <img class="mx-auto d-block mb-4" width="100%" src="../img/Mailgun_Primary.png">
+                    <a href="https://www.mailgun.com/customers"><img class="mx-auto d-block mb-4" width="100%" src="../img/Mailgun_Primary.png"></a>
                 </section>
             </div>
         </div>
@@ -119,7 +146,7 @@
             <div class="row mb-3">
                 
                 <section class="col-sm-6">
-                    <img class="mx-auto d-block mb-4" width="100%" src="../img/logo_lockup_analytics_icon_vertical_white_2x.png">
+                    <a href="https://www.google.com/analytics/#?modal_active=none"><img class="mx-auto d-block mb-4" width="100%" src="../img/logo_lockup_analytics_icon_vertical_white_2x.png"></a>
                     
                 </section>
                 
@@ -145,7 +172,7 @@
                 </section>
                 
                 <section class="col-sm-6">
-                    <img class="mx-auto d-block mb-4" width="100%" src="../img/adobeairlogo.jpg">
+                    <a href="http://www.adobe.com/products/air/features.html"><img class="mx-auto d-block mb-4" width="100%" src="../img/adobeairlogo.jpg"></a>
                 </section>
             </div>
         </div>
@@ -155,8 +182,8 @@
         <div class="container">
             <div class="row mb-3">
                 
-                <section class="col-sm-6 d-flex flex-column">
-                    <img class="mx-auto d-block mb-4" width="75%" src="../img/bootstrap-outline.svg">
+                <section class="col-sm-6">
+                    <a href="https://getbootstrap.com"><img class="mx-auto d-block mb-4" width="75%" src="../img/bootstrap-outline.svg"></a>
                 </section>
                 
                 <section class="col-sm-6">
@@ -172,9 +199,28 @@
             </div>
         </div>
     </div>
+    
+        <div class="jumbotron jumbotron-fluid mt-4 bg-faded"> 
+        <div class="container">
+            <div class="row mb-3">
+                
+                
+                
+                <section class="col-sm-6">
+                    
+                    <p class="lead">Paypal, a trusted e-commerce payment solution around since 1998, is the way to go for any form of payment integration. From their offering of analytic and payment tracing service, their easy to use user interface, and their historic trust you should be using Paypal. Multiple scrips to integrate your next project with the most popular platform is at the ready.</p>
+                    
+                    <p class="lead">Incorporate auto-payments without compromising personal information. Provider your customers with financing solutions. Easily provide your customers with order status and tracking solutions. Take advantage of low transaction fees and microtransaction processing fees.</p>
+                </section>
+                
+                <section class="col-sm-6">
+                    <a href="https://www.paypal.com/us/webapps/mpp/merchant"><img class="mx-auto d-block mb-4" width="75%" src="../img/Paypal-logo-pp-2014.png"></a>
+                </section>
+            </div>
+        </div>
+    </div>
         
     <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
     <script src="../js/tether.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-            
 </body>
