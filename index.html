@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
 <head>
-	<title>sfxnet</title>
+	<title>sfxnet | Mobile, Desktop and Web App development</title>
     <meta charset="UTF-8">
     <!-- Compatibility --> 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,7 +24,38 @@
 
       gtag('config', 'UA-24240017-1');
     </script>
+    
+    
 
+
+    <!-- Global site tag (gtag.js) - Google AdWords: 960739251 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-960739251"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-960739251');
+    </script>
+
+
+    <!-- Event snippet for Ad Action Conversion conversion page
+    In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-960739251/47I8CJyn73oQs--OygM',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+    
 </head>
     
 <body>
@@ -50,9 +81,9 @@
                   </a>
 
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="https://github.com/sfxworks/Public-Desktop">Public Desktop</a>
+                    <a class="dropdown-item" href="/publicdesktop">Public Desktop</a>
                     <!-- <a class="dropdown-item disabled" href="#">Elemental Blocks</a> -->
-                    <a class="dropdown-item" href="https://github.com/sfxworks/Project-Storage">Filestore</a>
+                    <a class="dropdown-item" href="/filestore">Filestore</a>
                     <a class="dropdown-item" href="https://hotstourneys.com">HotS Tourneys</a>
                   </div>
                 </div>
@@ -76,8 +107,8 @@
                   </a>
 
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="tel:+16505573996">650-557-3996</a>
-                    <a class="dropdown-item" href="mailto:sfxworks@gmail.com">sfxworks@gmail.com</a>
+                    <a class="dropdown-item" href="tel:+16505573996" onclick="gtag_report_conversion('#')">650-557-3996</a>
+                    <a class="dropdown-item" href="mailto:services@sfxworks.net">services@sfxworks.net</a>
                   </div>
                 </div>
             </div>
@@ -123,11 +154,19 @@
                 <p>Wanting to promote your brick and mortar business? Trying to bring users to your services? Using selected smart advertising partners, promote your content and make every dollar count towards your goal.</p>
             </section>
         </div>
+        
+        <div class="row mb-5">
+            <section class="col-sm-4 mx-auto text-center">
+                <p>Call today for free consultation!</p>
+                <a type="button" class="btn btn-success" href="tel:+16505573996" onclick="gtag_report_conversion('#')">Call (650) 557-3996</a>
+            </section>
+        </div>
     </div>
         
         
     <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
     <script src="js/tether.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+
             
 </body>
