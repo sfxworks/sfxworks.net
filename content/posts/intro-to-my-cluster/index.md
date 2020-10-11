@@ -39,7 +39,7 @@ Following the docs in the above repo make for a great home cluster. You can even
 Now, this isn't really a step-by-step how-to guide. More of a reference. Though you are free to get started with a quick [gist](https://gist.github.com/sfxworks/d41f9878248ee66ab99df540c8c64366) for Ubuntu 20 (likely for all DEB based systems, though untested) to prep your nodes and [my git-ops repo](https://github.com/sfxworks/home-cluster) that includes the above. You'll need to fork it though and apply your own configurations based on your needs. 
 
 ## Some Extra Gotcha's for ARM
-If you're going to run a cluster or mixed cluster of Raspberry Pi's and normal servers (ARM/AMD64 mix) you'll want to do a few things.
+If you're going to run a cluster of Raspberry Pi's or mixed cluster of Raspberry Pi's and normal servers (ARM/AMD64 mix) you'll want to do a few things.
 
 1. Ensure you have `cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1` added to `/boot/firmware/cmdline.txt` or similar for your distro. This enables cgroup features for containers on those nodes.
 2. Running a mix with Rook Ceph [isn't possible](https://github.com/rook/rook/issues/4051) unless you use [a differerent set of images](https://github.com/rook/rook/issues/4051#issuecomment-623172463). 
