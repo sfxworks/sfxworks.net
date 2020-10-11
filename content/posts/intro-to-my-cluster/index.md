@@ -6,7 +6,7 @@ pubdate: '2020-10-11'
 
 ---
 
-![homelab-grafana](/imgs/homelab-grafana.PNG)
+![homelab-grafana](imgs/homelab-grafana.PNG)
 
 ```
 kubectl get nodes -o wide
@@ -36,5 +36,5 @@ Git Ops | [FluxCD](https://docs.fluxcd.io/en/1.21.0/tutorials/get-started-helm/)
 
 Following the docs in the above repo make for a great home cluster. You can even go as far as to run Virtual Machines using [kubevirt](http://kubevirt.io/) once you have it all running. Now, this isn't really a step-by-step how-to guide. More of a reference. Though you are free to get started with a quick [gist](https://gist.github.com/sfxworks/d41f9878248ee66ab99df540c8c64366) for Ubuntu 20 (likely for all DEB based systems, though untested) to prep your nodes and [my git-ops repo](https://github.com/sfxworks/home-cluster) that includes the above. You'll need to fork it though and apply your own configurations based on your needs. I hope this serves as a starting point for your adventures! 
 
-![homelab-ceph](/imgs/homelab-ceph.PNG)
+![homelab-ceph](imgs/homelab-ceph.PNG)
 
