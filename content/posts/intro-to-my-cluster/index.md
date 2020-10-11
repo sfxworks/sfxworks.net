@@ -34,7 +34,18 @@ Load Balancing | [Metallb](https://metallb.universe.tf/usage/) | Layer 2 more w/
 Monitoring | [Prometheus Operator](https://github.com/prometheus-community/helm-charts) | Above installed
 Git Ops | [FluxCD](https://docs.fluxcd.io/en/1.21.0/tutorials/get-started-helm/) | A git repo accessible by cluster
 
-Following the docs in the above repo make for a great home cluster. You can even go as far as to run Virtual Machines using [kubevirt](http://kubevirt.io/) once you have it all running. Now, this isn't really a step-by-step how-to guide. More of a reference. Though you are free to get started with a quick [gist](https://gist.github.com/sfxworks/d41f9878248ee66ab99df540c8c64366) for Ubuntu 20 (likely for all DEB based systems, though untested) to prep your nodes and [my git-ops repo](https://github.com/sfxworks/home-cluster) that includes the above. You'll need to fork it though and apply your own configurations based on your needs. I hope this serves as a starting point for your adventures! 
+Following the docs in the above repo make for a great home cluster. You can even go as far as to run Virtual Machines using [kubevirt](http://kubevirt.io/) once you have it all running. 
+
+Now, this isn't really a step-by-step how-to guide. More of a reference. Though you are free to get started with a quick [gist](https://gist.github.com/sfxworks/d41f9878248ee66ab99df540c8c64366) for Ubuntu 20 (likely for all DEB based systems, though untested) to prep your nodes and [my git-ops repo](https://github.com/sfxworks/home-cluster) that includes the above. You'll need to fork it though and apply your own configurations based on your needs. 
+
+## Some Extra Gotcha's for ARM
+If you're going to run a mixed cluster of Raspberry Pi's and normal servers (ARM/AMD64 mix) you'll want to do a few things.
+
+1. Ensure you have `cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1` added to `/boot/firmware/cmdline.txt` or similar for your distro. This enables cgroup features for containers on those nodes.
+2. Running a mix with Rook Ceph [isn't possible](https://github.com/rook/rook/issues/4051) unless you use [a differerent set of images](https://github.com/rook/rook/issues/4051#issuecomment-623172463). 
+Check out the raspbernetes multiarch repo for more info on that [here](https://github.com/raspbernetes/multi-arch-images)
+
+I hope this serves as a starting point for your adventures! 
 
 ![homelab-ceph](imgs/homelab-ceph.PNG)
 
