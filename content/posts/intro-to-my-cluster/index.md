@@ -42,7 +42,7 @@ Now, this isn't really a step-by-step how-to guide. More of a reference. Though 
 If you're going to run a cluster of Raspberry Pi's or mixed cluster of Raspberry Pi's and normal servers (ARM/AMD64 mix) you'll want to do a few things.
 
 1. Ensure you have `cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1` added to `/boot/firmware/cmdline.txt` or similar for your distro. This enables cgroup features for containers on those nodes.
-2. Running a mix with Rook Ceph [isn't possible](https://github.com/rook/rook/issues/4051) unless you use [a differerent set of images](https://github.com/rook/rook/issues/4051#issuecomment-623172463). 
+2. Running a mix with Rook Ceph [isn't possible at this time](https://github.com/rook/rook/issues/4051) unless you use [a differerent set of images](https://github.com/rook/rook/issues/4051#issuecomment-623172463). 
 Check out the raspbernetes multiarch repo for more info on that [here](https://github.com/raspbernetes/multi-arch-images)
 
 I hope this serves as a starting point for your adventures! 
