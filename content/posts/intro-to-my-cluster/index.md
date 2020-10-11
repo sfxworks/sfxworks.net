@@ -25,7 +25,7 @@ A few things are used to make this all work.
 
 Thing | Resource | Prerequisites
 -|-|-
-Baremetal Servers | You can get these many places | OS Installed
+Baremetal Servers | You can get these many places | Put an [OS](https://ubuntu.com/download/server) on a USB and install it from boot (Or go PXE if  you're feeling fancy)
 Deployer | [kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl) | Instructions followed based on your distro
 Container Runtime Interface (CNI) | [Containerd](https://containerd.io/downloads/) or [CRI-O](https://cri-o.io/#distribution-packaging) recommended | Same as above
 Container Network Interface (CRI) | [Kube Router](https://www.kube-router.io/) | All devices on same network
