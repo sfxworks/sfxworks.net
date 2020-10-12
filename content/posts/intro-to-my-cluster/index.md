@@ -27,8 +27,8 @@ Thing | Resource | Prerequisites
 -|-|-
 Baremetal Servers | You can get these many places | Put an [OS](https://ubuntu.com/download/server) on a USB and install it from boot (Or go PXE if  you're feeling fancy)
 Deployer | [kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl) | Instructions followed based on your distro
-Container Runtime Interface (CNI) | [Containerd](https://containerd.io/downloads/) or [CRI-O](https://cri-o.io/#distribution-packaging) recommended | Same as above
-Container Network Interface (CRI) | [Kube Router](https://www.kube-router.io/) | All devices on same network
+Container Runtime Interface (CRI) | [Containerd](https://containerd.io/downloads/) or [CRI-O](https://cri-o.io/#distribution-packaging) recommended | Same as above
+Container Network Interface (CNI) | [Kube Router](https://www.kube-router.io/) | All devices on same network
 Storage | [Rook Ceph](https://rook.io/docs/rook/v1.4/ceph-storage.html) | Raw Devices w/ No Partitions [More Info](https://rook.io/docs/rook/v1.4/ceph-prerequisites.html)
 Load Balancing | [Metallb](https://metallb.universe.tf/usage/) | Layer 2 more w/ a range of IPs reserved for Load Balancer service type
 Monitoring | [Prometheus Operator](https://github.com/prometheus-community/helm-charts) | Above installed
