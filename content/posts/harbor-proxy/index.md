@@ -1,7 +1,7 @@
 ---
 draft: false
 resources: []
-title: Make harbor your proxy with cri-o
+title: Creating a cluster container registry cache with Harbor and CRI-O
 pubdate: 2020-11-3
 
 ---
