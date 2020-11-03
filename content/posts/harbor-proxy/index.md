@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 resources: []
 title: Make harbor your proxy with cri-o
 pubdate: 2020-11-3
@@ -9,19 +9,19 @@ pubdate: 2020-11-3
 ![Harbor Proxy](imgs/harbor-proxy.png)
 
 
-It's fun. Though it only works for CRI-O right now since the mirror requires a `/project` rather than just a base URL. I mean, you could maybe get fancy with some sort of urirewrite but I'm not getting into that today.
+It's fun. It only works for CRI-O right now since the mirror requires a `/project` rather than just a base URL. I mean, you could maybe get fancy with some URI rewrite, but I'm not getting into that today.
 
 ## TLDR
 Anyway, works like this:
 1. Install [CRI-O](https://cri-o.io/)
-2. Set `/etc/containers/registries.conf` to a dummy mirror (for now, I did it the hard way with an existing harbor install but you can do it like this and save yourself a `kubectl drain node` + install)
-3. `helm install harbor`
+2. Set `/etc/containers/registries.conf` to a dummy mirror (for now, I did it the hard way with an existing harbor install, but you can do it like this and save yourself a `kubectl drain node` + install)
+3. `helm install harbor.`
 4. Create a project proxy with your creds.
 
 A bit of a walkthrough.
 
 ## CRIO 
-[https://cri-o.io/](https://cri-o.io/) gives you a good set of walkthroughs already. Though if you're building it for some RASPIs then you'll want to build it.
+[https://cri-o.io/](https://cri-o.io/) gives you a good set of walkthroughs already. Though if you're building it for some RASPIs, then you'll want to make it.
 
 If you're running Ubuntu 20, their documentation for [building from source](https://github.com/cri-o/cri-o/blob/master/install.md#build-and-install-cri-o-from-source) needs a bit of an update. Do this for your build tools instead:
 ```
@@ -45,16 +45,16 @@ apt-get update -qq && apt-get install -y \
   gcc \
   make
 ```
-git pull + checkout release-1.19 + make + make install + make install config and you're good.
+git pull + checkout release-1.19 + make + make install + make install config, and you're up and running.
 
 Follow the rest as stated. `journalctl -xeu crio` if your friend if you get lost. 
 
-After that....
+After that,
 
 ## Harbor
 
 [https://github.com/goharbor/harbor-helm](https://github.com/goharbor/harbor-helm)
-Install harbor using their chart. Their installation files are there, though **remember to change the image tags to v2.1.1 or the latest version instead of dev** unless you like pulling your hair out on bad defaults and oversight. 
+Install harbor using their chart. The chart installation files are there, though **remember to change the image tags to v2.1.1 or the latest version instead of dev** unless you like pulling your hair out on bad defaults and oversight. 
 
 ```yml
 core:
@@ -69,12 +69,12 @@ portal:
 # etc
 ```
 
-Finally make a project in harbor that uses a registry. Instructions on their site [here](https://goharbor.io/docs/2.1.0/administration/configure-proxy-cache/). 
-They give example such as ` docker pull <harbor_server_name>/<proxy_project_name>/goharbor/harbor-core:dev` if you were to use the proxy that way. Though we want this for all nodes. So back to crio.
+Finally, make a project in Harbor that uses a registry. Instructions on their site [here](https://goharbor.io/docs/2.1.0/administration/configure-proxy-cache/). 
+They give example such as ` docker pull <harbor_server_name>/<proxy_project_name>/goharbor/harbor-core:dev` if you were to use the proxy that way. Though we want this for all nodes. So back to CRI-O.
 
 ## Telling the nodes
 Take a look at the `registries.conf` documentation [on github](https://github.com/containers/image/blob/master/docs/containers-registries.conf.5.md).
-Under the *Remapping and mirroring registries* section you can specify a mirror. Great for harbor since this we can just say "anything that doesn't have a domain attached to the image ref use this default endpoint and this mirror instead". Great for this scenario.
+Under the *Remapping and mirroring registries* section, you can specify a mirror. This feature works excellent with Harbor as we can say "anything that doesn't have a domain attached to the image refuse this default endpoint and this mirror instead." Great for this scenario.
 
 So in `/etc/containers/registries.conf`:
 ```
@@ -90,7 +90,7 @@ location = "docker.io"
 [[registry.mirror]]
 location = "harbor.internal/proxy"
 ```
-I should mention I am using metallb and kube-router here. Configure your DNS server attached to your nodes to use the IP/domain of your harbor endpoint.
+I should mention I am using metallb and Kube-router here. Configure your DNS server attached to your nodes to use the IP/domain of your harbor endpoint.
 ```
 kubectl get services -n harbor
 NAME                          TYPE           CLUSTER-IP       EXTERNAL-IP    PORT(S)                                     AGE
@@ -101,7 +101,7 @@ set `insecure = true` if you don't feel like distributing the CA to your nodes o
 And that's about it. Uhh. To test:
 
 ## Testing
-Tail the harbor registry log really quick:
+Tail the harbor registry log:
 
 `kubectl logs -f -n harbor deployment/harbor-harbor-registry -c registry`
 
@@ -126,3 +126,5 @@ time="2020-11-03T09:56:58.265875935Z" level=info msg="redis: connect harbor-harb
 time="2020-11-03T09:56:58.266615239Z" level=info msg="response completed" go.version=go1.14.7 http.request.host="127.0.0.1:8080" http.request.id=196fc89d-9ad3-42a9-ab53-551c775e848c http.request.method=PUT http.request.remoteaddr=127.0.0.1 http.request.uri="/v2/proxy/library/hello-world/blobs/uploads/5ba78130-102a-4b29-919e-5f0e4ef18988?_state=ntBO86J9TrDlsNToMNa6jDGqTVN04rHiBpQdiuLrrdV7Ik5hbWUiOiJwcm94eS9saWJyYXJ5L2hlbGxvLXdvcmxkIiwiVVVJRCI6IjViYTc4MTMwLTEwMmEtNGIyOS05MTllLTVmMGU0ZWYxODk4OCIsIk9mZnNldCI6MCwiU3RhcnRlZEF0IjoiMjAyMC0xMS0wM1QwOTo1Njo1Ny42MTE5MDA3M1oifQ%3D%3D&digest=sha256%3A0e03bdcc26d7a9a57ef3b6f1bf1a210cff6239bff7c8cac72435984032851689" http.request.useragent=harbor-registry-client http.response.duration=585.817188ms http.response.status=201 http.response.written=0
 10.244.5.155 - - [03/Nov/2020:09:56:57 +0000] "PUT /v2/proxy/library/hello-world/blobs/uploads/5ba78130-102a-4b29-919e-5f0e4ef18988?_state=ntBO86J9TrDlsNToMNa6jDGqTVN04rHiBpQdiuLrrdV7Ik5hbWUiOiJwcm94eS9saWJyYXJ5L2hlbGxvLXdvcmxkIiwiVVVJRCI6IjViYTc4MTMwLTEwMmEtNGIyOS05MTllLTVmMGU0ZWYxODk4OCIsIk9mZnNldCI6MCwiU3RhcnRlZEF0IjoiMjAyMC0xMS0wM1QwOTo1Njo1Ny42MTE5MDA3M1oifQ%3D%3D&digest=sha256%3A0e03bdcc26d7a9a57ef3b6f1bf1a210cff6239bff7c8cac72435984032851689 HTTP/1.1" 201 0 "" "harbor-registry-client"
 ```
+
+And that's about that! You're now thinking with mirrors.
