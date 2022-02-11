@@ -1,5 +1,5 @@
 title: sfxworks
-baseURL: 'https://sfxworks.net'
+baseURL: '/'
 languageCode: "en-us"
 theme: amperage
 
@@ -9,7 +9,3 @@ menu:
       name: GitHub
       url: 'https://github.com/sfxworks'
       weight: 10
-deployment:
-  targets:
-    name: sfxworks-s3
-    URL: s3://sfxworks-f5a3aa42-8998-45e0-9c7e-afbee254fd57?endpoint=rgw.sfxworks.net&disableSSL=false&s3ForcePathStyle=true
