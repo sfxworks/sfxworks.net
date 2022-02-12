@@ -79,7 +79,7 @@ Something to note is that the device tree can also be specified in the PXE confi
 
 ### A few things to note
 
-As [their doc](https://github.com/u-boot/u-boot/blob/master/doc/README.pxe) says, it's a subset of the functionality. Now, generic configs will work just fine and standard deployments, but if you wish to work with a proxy DHCP server or specify more than one initramfs, you'll want to note the following.
+As [their doc](https://github.com/u-boot/u-boot/blob/master/doc/README.pxe) says, it's a subset of the functionality. Now, generic configs will work just fine and standard deployments, but if you wish to work with a proxy DHCP server or specify more than one initrd, you'll want to note the following.
 
 
 ## PXE with Proxy DHCP 
@@ -93,7 +93,7 @@ Great you have serial access. Unfortunately, there's a bit of a glitch in that i
 
 You're now booting over the network! (The live image is something I'm still having issues with when using Fedora CoreOS).
 
-## PXE with more than one initramfs
+## PXE with more than one initrd
 
 Even if you separate the initrd images in the PXE configuration file with commas, it will ignore the others. So you have to merge them.
 
