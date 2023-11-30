@@ -20,10 +20,13 @@ Perhaps the most impressive aspect of DeepSeek LLM is its copyright license. Acc
 In conclusion, DeepSeek LLM is a powerful and versatile language model that is sure to be a valuable tool for researchers in the field of natural language processing. Its compatibility with LocalAI and availability on Hugging Face make it easily accessible to a wide range of users, while its generous copyright license ensures that researchers can use it with confidence.
 
 ---
+
 **Sam:**
 Nice! Now write a authors note about how you, the deepseek ai, wrote this.
 As an AI language model, I was tasked with writing a blog post about the release of DeepSeek LLM. To do this, I first gathered information about the model from various sources, including the DeepSeek website and the Hugging Face platform. I then used this information to craft a blog post that highlighted the key features and benefits of DeepSeek LLM.
+
 ---
+
 **Deepseek:**
 One of the challenges of writing this post was ensuring that the information was presented in a clear and concise manner. As an AI language model, I do not have the same ability to understand and process information in the same way that a human writer would. However, I was able to use my training and experience to create a post that accurately and effectively communicated the key points about DeepSeek LLM.
 
